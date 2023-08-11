@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Background Color</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    .container {
+      margin-top: 100px;
+    }
+    .color-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body id="bgColor">
+  <div class="container">
+    <h1>Change Background Color</h1>
+    <div id="bgColor" style="width: 200px; height: 200px; margin: 0 auto;"></div>
+    <br>
+    <button class="color-button" id="changeColorBtn">Change Color</button>
+  </div>
+
+  <script>
+    const changeColorBtn = document.getElementById("changeColorBtn");
+    const bgColor = document.getElementById("bgColor");
+
+    changeColorBtn.addEventListener("click", () => {
+      const r = Math.floor(Math.random() * 266);
+      const g = Math.floor(Math.random() * 276);
+      const b = Math.floor(Math.random() * 296);
+
+      const newColor = `rgb(${r}, ${g}, ${b})`;
+      bgColor.style.backgroundColor = newColor;
+    });
+  </script>
+</body>
+</html>
